@@ -1,10 +1,18 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Video Downloader";
 }
+<head>
+    <link rel="stylesheet" href="~/css/IndexModelSheet.css"/>
+</head>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="Topic">Download Videos</div>
+
+<form method="post">
+    <div class="form-group">
+        <label class="label" for="urlInput">Video URL </label>
+        <input type="text" class="form-control" id="urlInput" name="url" placeholder="past url here" required />
+    </div>
+    <button type="submit" class="submitButton">Download</button>
+</form>

@@ -1,0 +1,26 @@
+﻿.Topic {
+    color: #3A4750;
+    font-family: 'Segoe UI';
+    font-size: 48px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.label {
+    margin-bottom: 6px;
+    color: #3A4750;
+}
+
+.submitButton {
+    background-color: #F6C90E;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.submitButton:active {
+    transform: scale(0.95);
+}
