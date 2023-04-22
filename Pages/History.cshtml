@@ -1,0 +1,32 @@
+﻿@page
+@model PixelGraby.Pages.HistoryModel
+@{
+    ViewData["Title"] = "Video Downloaded History";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/IndexModelSheet.css"/>
+    <link rel="stylesheet" href="~/css/history.css"/>
+</head>
+
+<div class="Topic">Downloaded Videos</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Video</th>
+            <th>File name</th>
+            <th>File size</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var video in Model.Videos)
+        {
+            <tr>
+               <td><img src="@video.ThumbnailPath" alt="Thumbnail"></td>
+               <td>@video.FileName</td>
+               <td>@video.FileSize</td>
+            </tr>
+        }
+    </tbody>
+</table>
