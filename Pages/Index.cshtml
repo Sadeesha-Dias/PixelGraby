@@ -3,11 +3,29 @@
 @{
     ViewData["Title"] = "Video Downloader";
 }
+
 <head>
     <link rel="stylesheet" href="~/css/IndexModelSheet.css"/>
 </head>
 
 <div class="Topic">Download Videos</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.Message))
+{
+    <div id="success-notification" class="alert alert-success">@Model.Message</div>
+}
+
+<script>
+    // get the element by id
+    var successNotification = document.getElementById("success-notification");
+    
+    // diasappear the notification after 3 seconds
+    setTimeout(function() {
+        if(successNotification) {
+            successNotification.style.display = "none";
+        }
+    }, 3000);
+</script>
 
 <form method="post">
     <div class="form-group">
@@ -16,3 +34,5 @@
     </div>
     <button type="submit" class="submitButton">Download</button>
 </form>
+
+

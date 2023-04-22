@@ -14,7 +14,14 @@ namespace PixelGraby.Pages
             _logger = logger;
         }
 
-        public async Task OnPost(string url)
+        [TempData]
+        public string Message { get; set; }
+
+        //[BindProperty]
+        //public bool UrlError { get; set; }
+
+
+        public async Task<IActionResult> OnPost(string url)
         {
             using (var client = new HttpClient())
             {
@@ -34,6 +41,9 @@ namespace PixelGraby.Pages
                         {
                             await stream.CopyToAsync(fileStream);
                         }
+
+                        TempData["Message"] = "Video downloaded successfully!";
+                        return RedirectToPage();
                     }
                 }
             }
